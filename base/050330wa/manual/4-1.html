@@ -1,0 +1,62 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > 問題解決編 > <SPAN>設置に関する問題</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ここでは，おもに設置に関してよく聞かれる問題にできるだけお答えしています。<br>
+<a href="4-2.html">■運営に関する問題</a>についても，あわせてご参照ください。
+</TR></TABLE>
+<ul><li>
+<a href="#1">設置したところエラーメッセージが出る</a>
+</li>
+<li>
+<a href="#2">郵便のあて先に表示される街名に不具合がある</a>
+</li>
+<li>
+<a href="#3">原作SOLD OUTから乗り換え後，郵便のあて先に表示されるユーザー名が少ない</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">設置したところエラーメッセージが出る</a></h2>
+設置した段階でエラーが出る場合は，まず間違いなく設置手順をミスっています。<br>
+<br>
+まず基本的なところでは，<SPAN>パーミッション</SPAN>や，<SPAN>perl へのパス</SPAN>をきちんと設定しましたか？<br>
+また，<BIG>アイテム生成を行うのを忘れている</BIG>，<BIG>初期化を行うのを忘れている</BIG>という場合も多いです。<br>
+<br>
+<TABLE><TR><TD class="b">
+「ちゃんと手順通りやってるはずなのに……」と泣きたくなる気持ちもよーく分かります。<br>
+ですが，マニュアルにあわせて１つ１つ確認すれば，必ずできます。あきらめずがんばってください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">郵便のあて先に表示される街名に不具合がある</a></h2>
+設置URLを変えた場合など，郵便のあて先に表示される街名に不具合が生じることがあります。<br>
+たとえば，存在しない街が余計に表示されたり，ユーザーがまったく認識されなかったりする場合があります。<br>
+<br>
+この場合は，FTPソフトを使って，<b>common</b> フォルダ内にある <BIG>towndata.cgi</BIG> を削除します。<br>
+その後，あなたが設置している商人物語の<SPAN>全ての街</SPAN>で，管理室から「<SPAN>初期化／破損修復</SPAN>」ボタンを押してください。<br>
+これにより，街データが修復され，郵便のあて先が正常になります。<br>
+<br>
+※初期化ボタンといっても，データが消えるという意味ではありませんのでご安心ください。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">原作SOLD OUTから乗り換え後，郵便のあて先に表示されるユーザー名が少ない</a></h2>
+原作SOLD OUTから乗り換えを行った場合，商人物語のシステムが，ユーザーの情報を把握するには時間がかかります。<br>
+具体的には，商人物語はユーザーが<SPAN>ログインしたとき</SPAN>に，そのユーザーの情報を整理します。<br>
+ですので，乗り換え後にログインしていないユーザーの名前は，郵便のあて先には出てこないことになります。<br>
+<TABLE><TR><TD class="b">
+なお，管理人が管理権限でログインしたときには，ユーザーの情報を整理する作業は行われません。<br>
+管理人の店に入るときにいつも管理者パスを使っていると，郵便のあて先に追加されないので気をつけてください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+しばらく待っていれば解消されますので，気長に待っててください。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > 設置編 > <SPAN>CGIの基本</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

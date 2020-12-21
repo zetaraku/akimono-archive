@@ -1,0 +1,191 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > デザイン編 > <SPAN>画像と音楽の変更</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ゲームで使用されている画像や音楽は，自由に変更できます。<br>
+ここではゲーム中の画像や音楽を変更する方法と，注意事項について解説します。
+</TR></TABLE>
+<ul><li>
+<a href="#1">店長の顔画像を変更する</a>
+</li>
+<li>
+<a href="#2">ジョブ画像を変更する</a>
+</li>
+<li>
+<a href="#3">マップ画像を変更する</a>
+</li>
+<li>
+<a href="#4">アイテム画像を変更する</a>
+</li>
+<li>
+<a href="#5">音楽を変更する</a>
+</li>
+<li>
+<a href="#6">使用した素材の著作権表示</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">店長の顔画像を変更する</a></h2>
+店長の顔画像は，<SPAN>サイズ 48 × 48 の png 形式</SPAN>です。<br>
+保存場所は，ゲームフォルダ（akimono など）にある image 内 <b>kao</b> フォルダの中にあります。<br>
+<br>
+<SPAN>ＲＰＧツクール</SPAN>シリーズの顔グラと互換していますので，顔グラ素材サイトから利用できます。
+<TABLE><TR><TD class="b">
+ただし，素材は，ＲＰＧツクール以外のものにも使用できることを必ず確認してください。<br>
+ＲＰＧツクール専用となっていることが少なからずあります。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+顔画像の個数・サイズは，<b>_config.cgi</b> を編集することにより，変更することができます。
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG> … <b>_config.cgi</b> 100行目付近
+<pre>
+$ICON_NUMBER		=<SPAN>20</SPAN>;			# 店長顔アイコンの数
+$ICON_SIZE		='WIDTH=<SPAN>48</SPAN> HEIGHT=<SPAN>64</SPAN>';	# 顔アイコンのサイズ
+</pre>
+</TR></TABLE>
+※サイズを変更するときには，両端の「'」を誤って消さないようにご注意ください。<br>
+※顔アイコンのサイズを変えると，王様などのすべての顔アイコンのサイズが変更されます。<br>
+<br>
+顔アイコンのサイズが，画像により異なる場合は，以下のようにサイズ指定を外してしまう方法があります。<br>
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG> … <b>_config.cgi</b> 100行目付近
+<pre>
+$ICON_SIZE		='';			# 顔アイコンのサイズ
+</pre>
+</TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">ジョブ画像を変更する</a></h2>
+ジョブ画像は，デフォルトでは<SPAN>サイズ 30 × 45 の gif 形式</SPAN>です。<br>
+保存場所は，ゲームフォルダ（akimono など）にある image 内 <b>job</b> フォルダの中にあります。<br>
+<br>
+保存ファイル名は，<BIG>job「職業コード」.gif</BIG> となっています。<br>
+職業なしは job.gif，ログインしていないときの表示は jobguest.gif です。
+<TABLE><TR><TD class="b">
+職業コードについては，custom フォルダ内 <b>inc-item-data.cgi</b> の上のほうを見れば分かります。<br>
+改造して新しい職業を増やすと，それに対応するジョブ画像が必要になります。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+ジョブ画像のサイズは，<SPAN>スキンファイル</SPAN>内にあるスタイルシートの記述を編集することで，変更できます。<br>
+なお，<b>sindex.html</b> と <b>smain.html</b> の両方を変更する必要があることに注意してください。
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG> … サイズを 32 × 48 に変更した例
+<pre>
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;Style Type="text/css"&gt;
+&lt;!--
+A {font-weight: bold; text-decoration:none}
+A:hover {text-decoration:underline; position:relative;top:1pt;}
+FORM {margin: 3pt;}
+IMG {border:1 none;}
+IMG.i {width:16; height:16}
+IMG.s {width:32; height:16}
+IMG.j {width:<SPAN>32</SPAN>; height:<SPAN>48</SPAN>}	<BIG>←ここがジョブ画像のサイズ指定</BIG>
+BODY,TD,TH {font: 11pt/120% "MS UI Gothic";}
+</pre>
+</TR></TABLE>
+※ IMG.j という部分がジョブ画像の指定箇所です。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">マップ画像を変更する</a></h2>
+マップ画像は全て <SPAN>png 形式</SPAN>ですが，物によって様々なサイズのものがあります。<br>
+それぞれのサイズ及び形式は，仕様上固定されています。<br>
+保存場所は，ゲームフォルダ（akimono など）にある image 内 <b>map</b> フォルダの中です。<br>
+これらを差し替えていくのは大変ですので，根気のある方だけ変更してください。<br>
+<br>
+<SPAN>ＲＰＧツクール</SPAN>シリーズのマップチップ，キャラチップと互換していますので，素材サイトから利用できます。
+<TABLE><TR><TD class="b">
+ただし，素材は，ＲＰＧツクール以外のものにも使用できることを必ず確認してください。<br>
+ＲＰＧツクール専用となっていることが少なからずあります。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+それぞれの名前のファイルがどのようなところで使われているかについては，すべて解説できませんので，<br>
+１つ１つ表示させてみたり，画像を入れ替えたりしながら，確かめていってください。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="4" id="4">アイテム画像を変更する</a></h2>
+アイテム画像は，いずれもゲームフォルダ（akimono など）にある <b>image</b> フォルダの中にあります。<br>
+それぞれのファイル名とサイズは次の通りです。
+<TABLE><TR><TD class="b"><pre>
+・item-no-「アイテム番号」.png	： アイテムの画像	16 × 16
+・item-type-「種類番号」.png	： アイテムの種別	16 × 16
+・item-typesign-「種類番号」.png： 専門店表示		32 × 16
+・rank「数字」.png		： ランキング表示	16 × 16
+・dig「数字」.png		： 爵位表示		16 × 16
+etc.</pre>
+</TR></TABLE>
+アイテム番号，種類番号については，custom フォルダ内 <b>inc-item-data.cgi</b> を参照してください。
+<TABLE><TR><TD class="b">
+改造して新しいアイテム，新しいアイテムの種類を増やすと，それに対応する画像が必要になります。<br>
+また，アイテムの番号を入れ替えた場合，この絵の番号も入れ替えなくてはならないことに気をつけてください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+アイテム画像のサイズは，<SPAN>スキンファイル</SPAN>内にあるスタイルシートの記述を編集することで，変更できます。<br>
+ただし，これを変更すると，16 × 16 や 32 × 16 の<SPAN>画像すべてが変わってしまう</SPAN>ことに気をつけてください。<br>
+なお，<b>sindex.html</b> と <b>smain.html</b> の両方を変更する必要があります。
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG> … 16 × 16 の サイズを 20 × 20 に変更した例
+<pre>
+&lt;HTML&gt;&lt;HEAD&gt;
+&lt;Style Type="text/css"&gt;
+&lt;!--
+A {font-weight: bold; text-decoration:none}
+A:hover {text-decoration:underline; position:relative;top:1pt;}
+FORM {margin: 3pt;}
+IMG {border:1 none;}
+IMG.i {width:<SPAN>20</SPAN>; height:<SPAN>20</SPAN>}
+IMG.s {width:32; height:16}
+</pre>
+</TR></TABLE>
+※影響が大きすぎるので，あまりオススメはしないです。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="5" id="5">音楽を変更する</a></h2>
+音楽は，ゲームフォルダ（akimono など）の中の <b>midi.mid</b> です。<br>
+MIDI 形式なら何でも動作しますので，素材サイトから利用できます。<br>
+<br>
+ファイル名は，<b>custom</b> フォルダ内の <SPAN>midi.cgi</SPAN> を編集することにより，変更することができます。
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG> … ファイル名を変更した例
+<pre>
+$MIDI_URL = "<SPAN>bgm.mid</SPAN>";
+</pre>
+</TR></TABLE>
+※変更するときには，両端の「"」を誤って消さないようにご注意ください。<br>
+<br>
+なお，実際には，MIDI形式に限らず，mp3 や効果音を鳴らしたりすることもできますが，<br>
+ファイルサイズが大きすぎると，ネット上で読み込むのに時間がかかるので気をつけてください。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="6" id="6">使用した素材の著作権表示</a></h2>
+画像や音楽を変更するのに，素材サイトの素材を使ったときは，<SPAN>著作権表示</SPAN>が必要になることがあります。<br>
+（たとえば，「<BIG>素材使用の際はホームページのどこかにリンクをはる</BIG>ことが条件」など。）<br>
+<br>
+著作権表示を，スタッフロールに追加できるようになっています。<br>
+ゲームフォルダ（akimono など）内 custom フォルダにある <b>staff.cgi</b> を<SPAN>テキストエディタ</SPAN>で編集すればＯＫです。<br>
+<TABLE><TR><TD class="b">
+スキンの著作権表示に使用したファイル（skin.pl）とは別のファイルです。これは，スキンに関しては，<br>
+配布した場合に著作権表示の受け渡しが必要になることから，ファイルを分けてあるためです。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+以下の編集例を参考にしてください。
+<TABLE><TR><TD class="b">
+<BIG>＜編集例＞</BIG> … <b>staff.pl</b> 30行目付近に追加
+<pre>
+&lt;br&gt;&lt;br&gt;
+&lt;SPAN&gt;ジョブ画像素材&lt;/SPAN&gt; ： ○○○ 様 ... &lt;A HREF="http://アドレス/" target="_blank"&gt;名称&lt;/A&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;SPAN&gt;音楽素材&lt;/SPAN&gt; ： ○○○ 様 ... &lt;A HREF="http://アドレス/" target="_blank"&gt;名称&lt;/A&gt;
+</pre>
+</TR></TABLE>
+<br>
+著作権表示など，素材提供元が求める<SPAN>素材使用条件は必ず守る</SPAN>ようにしてください。<br>
+見てないだろうと思うかもしれませんが，提供元にバレることは結構多いのです。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > デザイン編 > <SPAN>画像と音楽の変更</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

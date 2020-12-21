@@ -1,0 +1,85 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > 問題解決編 > <SPAN>運営に関する問題</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ここでは，おもに運営に関してよく聞かれる問題にできるだけお答えしています。<br>
+<a href="4-1.html">■設置に関する問題</a>についても，あわせてご参照ください。
+</TR></TABLE>
+<ul><li>
+<a href="#1">長期間アクセスできないユーザーのために措置を講じたい</a>
+</li>
+<li>
+<a href="#2">重複登録をできるだけ確実にチェックしたい</a>
+</li>
+<li>
+<a href="#3">ユーザーが出す手紙の内容をチェックしたい</a>
+</li>
+<li>
+<a href="#4">ギルド対抗戦を開催したい</a>
+</li>
+<li>
+<a href="#5">ギルドを強制的に解散させたい</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">長期間アクセスできないユーザーのために措置を講じたい</a></h2>
+管理室に入り，店舗凍結のコマンドで，理由のところに「<b>stop</b>」と入力して実行してください。<br>
+その店舗は<SPAN>休暇扱い</SPAN>となって，<BIG>経営者不在閉店しなくなります</BIG>。<br>
+ただしその間は，プレイヤーは店舗に入れなくなります。<br>
+<TABLE><TR><TD class="b">
+店舗としては存在しているので，妨害行為を受けるなどして店が荒廃することはあります。<br>
+なお，休止にしたまま忘れておくと，永久に店が残り続けてしまうので気をつけてください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+旅行に行く人が出てきたときに，事前連絡してもらえば，活用できるでしょう。<br>
+<br>
+管理室の店舗凍結のコマンドにて「<b>off</b>」と入力すると休暇を解除することができます。<br>
+ただし，このままプレイヤーがログインしないまま，決算が来てしまうと，経営者不在閉店してしまいますので，<br>
+解除するタイミングに注意が必要です。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">重複登録をできるだけ確実にチェックしたい</a></h2>
+設置した商人物語にて，<BIG>action.cgi?key=ipcheck&nm=soldoutadmin&pw=（管理パス）</BIG> にアクセスします。<br>
+<br>
+何も表示されなければ重複登録者はいません。重複登録の疑いのある人がいれば，その人の<br>
+アクセスデータを表示しますので，それだけ見れば重複かどうかが瞬時に判断できます。<br>
+<br>
+また，複数の街を設置しているときは，<SPAN>街を越えて重複登録を検出します</SPAN>ので，<br>
+街Ａと街Ｂでそれぞれ店を開いていても，ばっちりバレます。<br>
+<TABLE><TR><TD class="b">
+ただし，重複を許可している店でも，重複状態があれば検出します。<br>
+とくに許可している店がある場合には，気をつけてください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">ユーザーが出す手紙の内容をチェックしたい</a></h2>
+設置した商人物語にて，<BIG>action.cgi?key=lettercheck&nm=soldoutadmin&pw=（管理パス）</BIG> にアクセスします。<br>
+<br>
+全ての人の手紙が一覧で表示され，誰が誰に出したかも分かるようになっています。<br>
+ただし，プライバシーにかかわりますので，よっぽど監視が必要な場合に限定して使うべきですし，<br>
+ユーザーの信用を失わないよう気をつけて運用してください。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="4" id="4">ギルド対抗戦を開催したい</a></h2>
+商人物語は，ギルド対抗戦のイベントを開催できるようになっています。<br>
+<br>
+管理室から，イベントの発生コマンドにて，コードに「<b>guildbattle</b>」と入力し，判定日時を設定してください。<br>
+これを設定すると，あとは，設定した日時において<SPAN>最も資金の多いギルド</SPAN>が勝利し，新聞に報告されます。<br>
+<br>
+賞品を与えるなどして，サイト内のイベントとして利用できると思います。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="5" id="5">ギルドを強制的に解散させたい</a></h2>
+ギルドを強制的に解散させるためには，FTPソフトで <b>common</b> フォルダに入り，<br>
+<BIG>（ギルドコード）.pl</BIG> というファイルを探して削除してください。<br>
+<br>
+そのまましばらくすれば，自動的にギルド解散処理が行われます。<br>
+これまでそのギルドに所属していた人は無所属になります。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > 設置編 > <SPAN>CGIの基本</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

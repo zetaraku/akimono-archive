@@ -1,0 +1,47 @@
+<HTML><HEAD>
+<Style Type="text/css">
+<!--
+A {font-weight: bold; text-decoration:none}
+A:hover {text-decoration:underline; position:relative;top:1pt;}
+FORM {margin: 3pt;}
+IMG {border:none;}
+IMG.i {width:16; height:16}
+IMG.s {width:32; height:16}
+IMG.j {width:30; height:45}
+BODY,TD,TH {font: 11pt/120% "MS UI Gothic";}
+TABLE {background: url(mark.png);}
+TR {background-color: #FCFBFF;}
+.t {background: transparent;}
+.b {background: #999999;border-color: #BBBBBB #666666 #666666 #BBBBBB;
+  border-style: solid;border-width: 2px;color:#ffffff;}
+BIG {background:#d9ff99; font-weight: none; font-size:11pt;}
+SPAN {background:#fff789; font-weight: none; font-size:11pt;}
+hr 	{color:#666666;}
+input,select,textarea{color:#000000;background-color:#FFFFFF;border:1 #505050 solid}
+input.button{color:#000000;background-color:#FFFFFF;border:1 #505050 solid}
+-->
+</Style>
+<TITLE>#SKINTITLE#</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#606060" LINK="#98a0c8" VLINK="#98a0c8" ALINK="#FF0000" BACKGROUND="bg.gif">
+<center>
+<!--SKINPAUSE-->
+<TABLE class=t><TR class=t><TD>#SKINJOB#<TD>
+<BIG>#SKINTITLE#</BIG> #SKINMENU#<br>
+#SKINMENUSUB# #SKINNEW#</TR>
+</TABLE>
+<hr width=500 noshade size=1>
+<IMG SRC="logo.gif" WIDTH="350" HEIGHT="70"><br>
+#SKINCOMMENT#
+<FORM ACTION="action.cgi" method="POST">
+名前<INPUT TYPE=TEXT NAME=nm VALUE="#SKINNAME#">
+パスワード<INPUT TYPE=PASSWORD NAME=pw VALUE="#SKINPW#">
+<INPUT TYPE=CHECKBOX NAME=ck CHECKED>クッキーで保存
+<INPUT TYPE=SUBMIT VALUE="店へ入る">
+<hr width=500 noshade size=1>
+<!--SKINPAUSE-->
+<hr width=80% noshade size=1>
+<small>商人物語 based #SKINVER# & edited #SKINEDIT# with Standard skin<br>
+<a href="mailto:#SKINMAIL#">本サイトの管理者</a> <A HREF="admin.cgi" target="_top">－</A> <A HREF="action.cgi?key=staff">スタッフロール</A> － <A HREF="http://akimono.org/" target="_blank">商人物語 配布元</A></small>
+</FORM>
+</center><br><div align="right"><small>#SKINCPU#CPUs</small></div></BODY></HTML>

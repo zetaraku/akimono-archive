@@ -1,0 +1,92 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > 設置編 > <SPAN>CGIの基本</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ここでは，CGI初心者という方に向けて，基礎的なことを解説します。<br>
+<SPAN>基本的な用語が分かるように</SPAN>しておきましょう。
+</TR></TABLE>
+<ul><li>
+<a href="#1">CGIの使えるサーバー</a>
+</li>
+<li>
+<a href="#2">準備する物</a>
+</li>
+<li>
+<a href="#3">パスとパーミッション</a>
+</li>
+<li>
+<a href="#4">CGIの負荷</a>
+</li>
+<li>
+<a href="#5">もっと詳しく知るには</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">CGIの使えるサーバー</a></h2>
+商人物語は，<BIG>perl</BIG>という言語で書かれた<SPAN>CGIプログラム</SPAN>です。CGIとはコモンゲートインタフェイスの略らしいです。<br>
+これを読んでいるあなたは，おそらくホームページを持っているか，持とうとしていると思いますが，<br>
+そのホームページ（html）の設置の仕方と，CGIの設置の仕方は，<SPAN>まったく違っていることに注意</SPAN>してください。<br>
+<br>
+商人物語を設置するには，<SPAN>CGIが動かせるサーバー</SPAN>でなくてはなりません。<br>
+CGIが動かせるサーバーは，あまり多くはありません。<br>
+サーバー探しについては，本家ホームページに<SPAN>オススメサーバーの紹介ページ</SPAN>がありますので，そちらを参照。<br>
+ただ，これらのサーバーが将来も設置可能かは分かりませんので，詳しくはサーバーの利用規約を読みましょう。
+<TABLE><TR><TD class="b">
+よく「掲示板やカウンタが動かせる」とうたっている所もありますが，実際にはサーバー側が用意したものしか<br>
+使えず，自分が用意したCGIプログラムは使用できないことがあります。ご注意ください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">準備する物</a></h2>
+用意しなければならないものは，(a)<SPAN>ＦＴＰソフト</SPAN>と，(b)<SPAN>テキストエディタ</SPAN>です。<br>
+<UL><LI><BIG>ＦＴＰソフト</BIG><br>
+あなたのパソコンで編集したホームページやCGIプログラムを，サーバーに送る（アップロードする）ためのソフトです。<br>
+ホームページを作っている人の大半が持っていると思いますが，ある程度機能がしっかりしたものを用意しましょう。<br>
+<a href="http://www.vector.co.jp/soft/win95/net/se038133.html" TARGET="_blank">Next FTP</A>（有料），
+<a href="http://www.vector.co.jp/soft/win95/net/se061839.html" TARGET="_blank">FF FTP</A>（無料）などが有名です。<br>
+<br>
+<LI><BIG>テキストエディタ</BIG><br>
+商人物語を設置するには，ファイルの一部を自分で編集しなければなりません。<br>
+この編集のために必要なのがテキストエディタです。<br>
+Windowsをお使いの方は，「アクセサリ」にある「<SPAN>メモ帳</SPAN>」や「<SPAN>ワードパッド</SPAN>」を使えばいいです。
+</UL>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">パスとパーミッション</a></h2>
+CGIを利用するには，<SPAN>perlへのパス</SPAN>と，<SPAN>パーミッション</SPAN>の２つを設定しなければなりません。<br>
+perlへのパスとは，<b>CGIプログラムを動かすためのおまじない</b>で，サーバーごとにおまじないが少し違います。<br>
+パーミッションとは，<b>ファイルの書き込みができるか，読み込みができるか，実行してよいかを数字で表したもの</b>で，<br>
+これもサーバーごとに少し違いがありますので気をつける必要があります。<br>
+<TABLE><TR><TD class="b">
+それぞれの具体的な設定は，商人物語を設置する際に，順を追って解説します。<br>
+ここでは，どんなものかが分かるようにしておけば大丈夫です。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="4" id="4">CGIの負荷</a></h2>
+CGIはプログラムですので，CGIで作られたページを見るには，プログラムを実行する手間がかかります。<br>
+あなたのパソコンが，大規模なプログラムをいくつも動かすと，動作が遅くなり，おかしくなってしまうように，<br>
+サーバーもまた，重いCGIプログラムを動かすと，障害を起こしてしまうことがあります。<br>
+このようなサーバーに与える負担のことを，<SPAN>負荷</SPAN>と呼んでいます。<br>
+<br>
+商人物語は，他のゲームCGIに比べればはるかに軽いプログラムなのですが，<br>
+それでもある程度の重さはあり，設置ミスや改造ミスをすると<SPAN>サーバーに多大な被害を与えることがあります</SPAN>。<br>
+くれぐれも取り扱いには気をつけてください。
+<TABLE><TR><TD class="b">
+サーバーの中には「ゲームCGI」の設置を禁止しているところがあり，そこには設置できません。<br>
+「重いCGI」を禁止しているだけのところは，<SPAN>今のところ大丈夫ですが，注意を怠らないでください</SPAN>。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="5" id="5">もっと詳しく知るには</a></h2>
+これまでの説明が「さっぱりワカラン」とか「もうちょい詳しく知りたい」という方は，<br>
+aimix様が提供されている「<a href="http://www.aimix.jp/cgi/" TARGET="_blank">Beginner's CGI</A>」というページを参考にするといいです。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > 設置編 > <SPAN>CGIの基本</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>
