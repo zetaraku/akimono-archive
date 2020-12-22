@@ -1,0 +1,90 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > デザイン編 > <SPAN>スキンの配布</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">スキンは自由に配布でき，他の人にデザインを提供することができます。<br>
+ここでは，スキンを配布する方法と，注意事項について解説します。
+</TR></TABLE>
+<ul><li>
+<a href="#1">配布するときの注意事項</a>
+</li>
+<li>
+<a href="#2">スキンの名前を表示する</a>
+</li>
+<li>
+<a href="#3">スキンファイルを圧縮する</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">配布するときの注意事項</a></h2>
+スキンファイルは，自由に配布して，他の人に使ってもらうことができます。<br>
+配布する際に，そのスキンの<SPAN>使用条件を自由に設定して構いません</SPAN>（再配布を禁止するとか）。
+<TABLE><TR><TD class="b">
+（法的な話） スキンファイルはプログラムではないので，ＧＰＬは適用されません。<br>
+このため，スキン作成者は，商人物語のライセンスにしばられずに<SPAN>自由に配布できます</SPAN>。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+ただし，気をつけてほしいのは，スキンの中で素材サイトの素材を利用している場合，<br>
+スキンの配布は，<SPAN>その素材の二次配布にあたるために禁止される可能性がある</SPAN>ということです。<br>
+あなた自身が，スキンで使う画像のすべてを描いているならば何の問題もありませんが，<br>
+他人の素材を使用した場合には，<SPAN>提供元に問い合わせることを忘れないでください</SPAN>。<br>
+<br>
+<TABLE><TR><TD class="b">
+他の人が配布しているスキンをさらに改造して配布するのも，二次配布になります。<br>
+なお，商人物語に<BIG>標準添付されているスキン</BIG>なら，それをベースに改造して配布するのは<br>
+全く構いませんし，その際も「標準スキンを元に改造した」ことをいちいち断る必要もないです。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">スキンの名前を表示する</a></h2>
+せっかく配布するのですから，スキンの名前を明らかにしておきたいと思うでしょう。<br>
+スキンの名前は，トップページの下のほうに <b>with ・・・ skin</b> とさりげなく表示されています。<br>
+<br>
+これを変更するには，<b>sindex.html</b> の下のほうに，対応する部分があるので，書き換えてください。<br>
+他のスキンと名前が同じだと混乱のもとになりますので，<SPAN>必ず名前を変えてください</SPAN>。<br>
+また，この部分にスキン配布元のリンクをはっておくといいかもしれません。
+<TABLE><TR><TD class="b">
+＜作成例＞ … <b>sindex.html</b> 下の方
+<pre>
+&lt;small&gt;商人物語 based #SKINVER# & edited #SKINEDIT# 
+with <SPAN>&lt;A HREF="http://アドレス/" target="_blank"&gt;Frontier skin&lt;/A&gt;</SPAN>&lt;br&gt;
+</pre></TR></TABLE>
+<br>
+なお，商人物語では，著作権表記は原則としてスタッフロールに統一しています。<br>
+スキンに直接，スキン著作権表示などを書き込まないでください（スタッフロールが目立たなくなるので）。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">スキンファイルを圧縮する</a></h2>
+スキンを配布するには，まずスキンを構成しているファイル一式を確実に揃えます。<br>
+使用される画像ファイルなどがすべて揃っているか確認してください。<br>
+なお，変更しているか否かにかかわらず，<SPAN>必要な物すべてを提供する</SPAN>ようにしてください。
+<TABLE><TR><TD class="b">
+<BIG>＜必要なファイル＞</BIG><br>
+・<b>sindex.html</b><br>
+・<b>smain.html</b><br>
+・<b>sindex-mob.html</b><br>
+・<b>smain-mob.html</b><br>
+・<b>skin.pl</b><br>
+・<b>使用する画像その他のファイル</b>
+</TR></TABLE>
+※とくに skin.pl は重要です。これは，スキンを適用したとき，スタッフロールに著作権表示を自動で追加させるものです。<br>
+<br>
+これら複数のファイルを，ひとまとめにして提供するために，ファイルを<SPAN>圧縮</SPAN>します。<br>
+これを行うためには，<SPAN>圧縮／解凍ソフト</SPAN>が必要です。<br>
+<a href="http://www.vector.co.jp/soft/win95/util/se107748.html" TARGET="_blank">Lhaz</A>（無料），
+<a href="http://www.vector.co.jp/soft/win95/util/se166893.html" TARGET="_blank">Lhaca デラックス版</A>（無料）などが有名です。<br>
+圧縮形式としては，zip 形式をオススメします。<br>
+<br>
+圧縮したら，その圧縮ファイルをあなたのホームページにアップロードして，配布しましょう。<br>
+なお，商人物語の作者にご連絡いただければ，商人物語のダウンロードページで配布できるかもしれません。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > デザイン編 > <SPAN>スキンの配布</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > 改造編 > <SPAN>改造の基本</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ここでは，<SPAN>改造の仕方</SPAN>やとくに注意すべき点について解説します。<br>
+<SPAN>後にいくほど改造の難易度が上がる</SPAN>ので，順番に挑戦していくとよいと思います。
+</TR></TABLE>
+<ul><li>
+<a href="#1">改造するときに守ってほしいこと</a>
+</li>
+<li>
+<a href="#2">アイテム・イベントデータを改造する</a>
+</li>
+<li>
+<a href="#3">設定ファイルをカスタマイズする</a>
+</li>
+<li>
+<a href="#4">掲示板の表示設定をカスタマイズする</a>
+</li>
+<li>
+<a href="#5">プログラムを改造する</a>
+</li>
+<li>
+<a href="#6">拡張プログラムを追加する</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">改造するときに守ってほしいこと</a></h2>
+改造するときにとくに守ってほしいことは，(a)<SPAN>ローカルサーバでテストすること</SPAN>，(b) <SPAN>custom フォルダ内のみを改造すること</SPAN>です。<br>
+<UL><LI><BIG>ローカルサーバ</BIG><br>
+ローカルサーバとは，簡単にいうと，<SPAN>あなたのパソコンの中でCGIを動かそう</SPAN>ということです。<br>
+サーバーで，ぶっつけ本番で動かしていると，エラーが暴走した場合に，最悪サーバーダウンという事態になります。<br>
+これを防ぐため，あらかじめ自分のパソコンでテストしてからにしようというわけです。<br>
+ローカルサーバの組み方については，<a href="http://www.kent-web.com/www/index.html" TARGET="_blank">kent web 内の解説</A>が参考になります。<br>
+<br>
+<LI><BIG>custom フォルダ</BIG><br>
+たいていの事柄は，<b>custom</b> フォルダに入っているファイルをいじることで変更できます。<br>
+これ以外の，たとえば <b>program</b> フォルダの中のファイルは<SPAN>原則としていじらないでください</SPAN>。<br>
+これらをいじらずに，プログラムの改造を行う方法については，<a href="#5">■この項目</a>に解説してあります。
+</UL>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">アイテム・イベントデータを改造する</a></h2>
+アイテム・イベントデータは，<b>custom</b> フォルダ内にある <SPAN>inc-item-data.cgi</SPAN> を，<br>
+テキストエディタで編集することにより，改造ができます。<br>
+<br>
+文法については，<a href="3-2.html">■別項</A>に詳しくまとめておりますので，そちらをご参照ください。<br>
+<TABLE><TR><TD class="b">
+簡単な改造については，この文法さえ分かっていれば，perl の知識がなくてもできます。<br>
+改造に興味がある方は，ここから手をつけていくとよいでしょう。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">設定ファイルをカスタマイズする</a></h2>
+商人物語では，<b>_config.cgi</b> にて基本的な設定が記述されていますが，<br>
+このほか，<b>custom</b> フォルダ内にある設定ファイルを変更することで，細かいカスタマイズが可能になっています。<br>
+<br>
+<TABLE><TR><TD class="b">
+<BIG>＜ファイルと設定内容＞</BIG>
+<pre>
+ +-- custom
+       ├------ inc-midi.cgi   ：  MIDIファイルの設定
+       ├------ inc-new.cgi    ：  新規開店時の説明内容の設定
+       ├------ inc-palace.cgi ：  宮殿で王様が要求するアイテムの設定
+       ├------ library.cgi    ：  図書館（プレイマニュアル）の設定
+       └------ staff.cgi      ：  スタッフロールの設定
+ </pre></TR></TABLE>
+<br>
+具体的な設定方法は，各ファイルの中身を見れば，だいたい分かるようになっていると思います。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="4" id="4">掲示板の表示設定をカスタマイズする</a></h2>
+掲示板の表示設定は，<b>program</b> フォルダ内にある <SPAN>inc-treebbs.cgi</SPAN> を編集すれば，変更できます。<br>
+<TABLE><TR><TD class="b">
+通常は，<b>program</b> フォルダ内のファイルは直接いじらないお約束なのですが，<SPAN>このファイルだけは例外</SPAN>です。<br>
+改造に慣れていなくて不安な人は，バックアップをとって作業することをおすすめします。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="5" id="5">プログラムを改造する</a></h2>
+商人物語のプログラムは，<b>program</b> フォルダの中に置かれています。<br>
+しかし，改造するときには，<SPAN>program フォルダの中を直接いじらない</SPAN>ようにしてください。<br>
+<br>
+<b>program</b> フォルダ内にあるファイルを改造するには，そのファイルを<SPAN>コピー</SPAN>して，<br>
+<b>custom</b> フォルダの中に同じものを作り，それを改造するようにします。<br>
+<TABLE><TR><TD class="b">
+<BIG>＜コピーの場所＞</BIG>・・・ log.cgiを改造する場合の例
+<pre>
+ +-- akimono など（ゲームフォルダ）
+ |      └------ custom
+ |                 └------ log.cgi     <BIG>←ここにファイルをコピーする</BIG>
+ |
+ +-- common
+ |
+ +-- program
+        └------ log.cgi
+</pre></TR></TABLE>
+<br>
+商人物語は，program フォルダと custom フォルダの両方に同じ名前のプログラムがあるときは，<br>
+custom フォルダの中にあるものを優先して使います。
+<TABLE><TR><TD class="b">
+custom フォルダ内にコピーしたファイルを改造していれば，もし改造でおかしくなっても，<br>
+そのファイルを削除するだけで，改造前のプログラムに簡単に戻すことができるわけです。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+また，custom フォルダは街ごとのフォルダの中にそれぞれありますから，<br>
+あなたが複数の街を設置していても，１つの改造は他の街に影響を与えません。<br>
+なので，<BIG>それぞれの街ごとにまったく異なった改造を施していくことができる</BIG>のです。<br>
+<TABLE><TR><TD class="b">
+なお，プログラムの改造には，<SPAN>perl の文法</SPAN>を理解していることが必要になります。<br>
+本屋などで売っているCGIの入門書のほか，<a href="http://tohoho.wakusei.ne.jp/wwwperl.htm" TARGET="_blank">とほほのperl入門</A>などを参考にしてください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="6" id="6">拡張プログラムを追加する</a></h2>
+商人物語は，構造上，簡単に拡張プログラムにアクセスすることができます。<br>
+たとえば，<b>custom</b> フォルダ内に <b>newprogram.cgi</b>という拡張プログラムを置いた場合，<br>
+<BIG>action.cgi?key=newprogram</BIG> というアドレスを指定すれば，そのプログラムが実行されます。<br>
+<TABLE><TR><TD class="b">
+つまり，<SPAN>action.cgi?key=（プログラム名）</SPAN>という具合に，プログラム名がアドレスの一部に<br>
+なっており，対応関係が明らかにされているわけです。これは既存のプログラムでも同様です。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+なお，key=○○ というアドレスから直接実行されたくないファイルは，「<SPAN>inc</SPAN>」で始まるファイル名にしてください。<br>
+<br>
+また，ゲーム中の「郊外」という地区に，拡張プログラムへのリンクを作ることができます。<br>
+<b>custom</b> フォルダ内にある <BIG>inc-move.cgi</BIG> を編集してください。<br>
+記述方法は，そのファイル内の例をご覧ください。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > 改造編 > <SPAN>改造の基本</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

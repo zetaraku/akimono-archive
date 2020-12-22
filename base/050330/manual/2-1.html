@@ -1,0 +1,114 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > デザイン編 > <SPAN>スキンの活用</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">商人物語は，<SPAN>スキン</SPAN>という発想により，デザインの変更がしやすいよう設計されています。<br>
+ここでは，スキンを活用しながらデザインを変更する方法について解説します。
+</TR></TABLE>
+<ul><li>
+<a href="#1">スキンを適用する</a>
+</li>
+<li>
+<a href="#2">スキンを編集する</a>
+</li>
+<li>
+<a href="#3">スキンで使った素材の著作権表示</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">スキンを適用する</a></h2>
+商人物語は，<BIG>スキン</BIG>という「デザインセット」を読み込んで，見栄えを作ります。<br>
+Windows でいうところの「デスクトップテーマ」のようなものをイメージしてもらえればいいと思います。<br>
+<br>
+このため，<SPAN>スキンファイル</SPAN>を入手して取り替えるだけで，あっという間にデザインを変更することができます。
+<TABLE><TR><TD class="b">
+スキンファイルは，商人物語のダウンロードページで配布しております。<br>
+また，将来的には商人物語対応の素材サイトでも入手できるかもしれません。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+スキンファイルを入手した後，それを適用してデザインを変更するには，ファイルをすべて，<br>
+ゲームフォルダ（<BIG>akimono</BIG> など）にそのままアップロードすればいいだけです。<br>
+その際，<b>sindex.html</b> などのファイルは，<SPAN>上書き</SPAN>することになります。<br>
+<TABLE><TR><TD class="b">
+スキンに専用のマニュアルが付属している場合には，そのマニュアルの指示に従ってください。<br>
+なお，マニュアルをアップロードする必要はありません。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">スキンを編集する</a></h2>
+スキンファイルを書き換えることにより，お好みにより自由なデザインを作ることができます。<br>
+スキンの正体は，sindex.html などの<SPAN>ＨＴＭＬファイル</SPAN>です。ファイルごとの役割は次の通りです。<br>
+<TABLE><TR><TD class="b">
+・<b>sindex.html</b> … トップ画面のデザイン。<br>
+・<b>smain.html</b> … 通常画面のデザイン。<br>
+・<b>sindex-mob.html</b> … トップ画面のデザイン（携帯用）。<br>
+・<b>smain-mob.html</b> … 通常画面のデザイン（携帯用）。<br>
+</TR></TABLE>
+<br>
+これらのファイルを書き換えれば，デザインが変わってくれます。<br>
+デザインをまったく新しくする場合も，１から作るのではなく，<SPAN>今あるスキンファイルから改造していく</SPAN>ようにしましょう。<br>
+※もっとも携帯用のデザインは，シンプルであることが必要なので，なるべく変えないほうがいいです。<br>
+<TABLE><TR><TD class="b">
+ＨＴＭＬなので，書き換えは<SPAN>ホームページを作るつもりでやればＯＫ</SPAN>です。<br>
+JAVAを使おうがFlashをはりつけようが，ホームページでできることはそのまま反映されます。<br>
+ホームページビルダーやフロントページなどの<SPAN>ホームページ編集ソフト</SPAN>もお使いいただけます。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+ただし，以下の記号は，システム上特別な働きをします。削除してしまうと，その部分の表示が出なくなります。<br>
+<TABLE><TR><TD class="b"><pre>
+・<BIG>&lt;!--SKINPAUSE--&gt;</BIG>	… プログラムの目印（２箇所ある）。<SPAN>削除してはならない</SPAN>。
+・<BIG>#SKINMENUTITLE#</BIG>	… 今いる場所の名前に置き換えられる。
+・<BIG>#SKINMENU#</BIG>		… 「次回決算まであと・・・」に置き換えられる。
+・<BIG>#SKINJOB#</BIG>		… ジョブ画像に置き換えられる。
+・<BIG>#SKINMENUSUB#</BIG>	… そこから行ける場所へのリンクに置き換えられる。
+・<BIG>#SKINCPU#</BIG>		… サーバーの反応速度を示す数値に置き換えられる。
+・<b>#SKINTITLE#</b>		… 街の正式名称に置き換えられる。
+・<b>#SKINNEW#</b>		… 「新規店舗オープン」に置き換えられる。
+・<b>#SKINCOMMENT#</b>	… $TITLE_COMMENT（_config.cgi）に置き換えられる。
+・<b>#SKINNAME#</b>		… 以前ログインした名前が自動入力される。
+・<b>#SKINPW#</b>		… 以前ログインしたパスワードが自動入力される。
+・<b>#SKINMAIL#</b>		… 管理者メールアドレスに置き換えられる。
+・<b>#SKINVER#</b>		… 商人物語のバージョンに置き換えられる。
+・<b>#SKINEDIT#</b>		… 改造バージョンに置き換えられる。
+</pre></TR></TABLE>
+※黒の太字は，<SPAN>トップ画面</SPAN>（sindex.html，sindex-mob.html）でのみ有効な記号です。<br>
+※それぞれの記号は，実際には<SPAN>有効な位置があり，大きく外れると無効になる</SPAN>ことがあります。<br>
+<br>
+そのほか，スタイルシートの記述の中には，<SPAN>削除してしまうと大きく見栄えが崩れるものがある</SPAN>ので気をつけましょう。<br>
+いろいろ試行錯誤しながら，何となく理解していくのがよいと思います。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">スキンで使った素材の著作権表示</a></h2>
+ホームページ素材サイトの素材を使ってデザインを作ったときに，<SPAN>著作権表示</SPAN>が必要になることがあります。<br>
+（たとえば，「<BIG>素材使用の際はホームページのどこかにリンクをはる</BIG>ことが条件」など。）<br>
+そのほか，あなたが作成したデザインについて，あなた自身の著作権を表示しておきたい場合もあるでしょう。<br>
+<br>
+そこで，スキンファイルに関する著作権を，スタッフロールに簡単に追加できるようになっています。<br>
+ゲームフォルダ（akimono など）内の <b>skin.pl</b> を<SPAN>テキストエディタ</SPAN>で編集すればＯＫです。<br>
+以下の編集例を参考にしてください。
+<TABLE><TR><TD class="b">
+<BIG>＜編集例＞</BIG> … <b>skin.pl</b> 9行目から
+<pre>
+$disp.=<<"HTML";
+&lt;br&gt;&lt;br&gt;
+&lt;SPAN&gt;背景素材&lt;/SPAN&gt; ： ○○○ 様 ... &lt;A HREF="http://アドレス/" target="_blank"&gt;名称&lt;/A&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;SPAN&gt;スキン配布元&lt;/SPAN&gt; ： ○○○ ... &lt;A HREF="http://アドレス/" target="_blank"&gt;名称&lt;/A&gt;
+HTML
+</pre>
+</TR></TABLE>
+※ skin.pl は，スキンを配布するときにそれを添付することで，受け取った相手に著作権表示を渡すことができます。<br>
+<br>
+著作権表示など，素材提供元が求める<SPAN>素材使用条件は必ず守る</SPAN>ようにしてください。<br>
+見てないだろうと思うかもしれませんが，提供元にバレることは結構多いのです。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > デザイン編 > <SPAN>スキンの活用</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

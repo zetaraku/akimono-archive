@@ -1,0 +1,44 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > 設置編 > <SPAN>特殊なサーバー</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ここでは，<SPAN>独自の仕様を採用しているサーバー</SPAN>での設定方法を解説しています。<br>
+自分のサーバーで設定するときの参考にしてください。
+</TR></TABLE>
+<ul><li>
+<a href="#1">biglobeサーバーでの設定方法</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">biglobeサーバーでの設定方法</a></h2>
+biglobe では，CGIプログラムだけが実は別サーバーになっており，<br>
+CGIプログラムだけは，<SPAN>http://cgi.www**.biglobe.ne.jp/～</SPAN>というアドレスにアクセスしなければなりません。<br>
+ただし，この振り分けは内部的に行われているので，ＦＴＰでアップロードする際は特に気をつける必要はありません。<br>
+<br>
+特別な設定が必要なのは，akimono（uronなど）フォルダ内の <b>_config.cgi</b> と custom フォルダ内の <b>midi.cgi</b> です。
+<TABLE><TR><TD class="b">
+<B>＜設定１＞ _comfig.cgi 99行目付近</B><pre>
+$IMAGE_URL	='<SPAN>http://www**.biglobe.ne.jp/～/image</SPAN>';  <BIG>←絶対アドレスで記述する</BIG>
+$IMAGE_DIR	='./image';             <BIG>←これは変更しなくてよい</BIG>
+</pre>
+<B>＜設定２＞ _comfig.cgi 109行目付近</B><pre>
+$COMMON_URL	='<SPAN>http://www**.biglobe.ne.jp/～/common</SPAN>'; <BIG>←絶対アドレスで記述する</BIG>
+$COMMON_DIR	='../common';            <BIG>←これは変更しなくてよい</BIG>
+</pre>
+<B>＜設定３＞ midi.cgi 7行目付近</B><pre>
+$MIDI_URL = '<SPAN>http://www**.biglobe.ne.jp/～/…/midi.mid</SPAN>';   <BIG>←絶対アドレスで記述する</BIG>
+</pre>
+</TR></TABLE>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > 設置編 > <SPAN>特殊なサーバー</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

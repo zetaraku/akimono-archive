@@ -1,0 +1,159 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="ROBOTS" content="NOINDEX,NOFOLLOW">
+<link href="manual.css" type="text/css" rel="stylesheet">
+<TITLE>商人物語 マニュアル</TITLE>
+</HEAD>
+<body background="wall.png" bgcolor=#FFFFFF text=#000000 link=#208c5f vlink=#208c5f alink=#ff0000>
+<br><a href="index.html">[トップ]</a> > 設置編 > <SPAN>新しく設置する方法</SPAN>
+<hr noshade size=1>
+<TABLE><TR><TD>
+<IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoguide.png">
+<TD class="b">ここでは，<SPAN>まったく新しく</SPAN>商人物語を設置する方法について解説します。<br>
+※<SPAN>どんな種類のものでも，何らかの商人物語がすでに設置されている場合</SPAN>は，<a href="1-4.html">■別項</A>を参照してください。<br>
+</TR></TABLE>
+<ul><li>
+<a href="#1">守らなければならないこと（規約）</a>
+</li>
+<li>
+<a href="#2">手順１：drago/_config.cgiを編集する</a>
+</li>
+<li>
+<a href="#3">手順２：perlへのパスを設定する</a>
+</li>
+<li>
+<a href="#4">手順３：サーバーにアップロードしてパーミッションを設定する</a>
+</li>
+<li>
+<a href="#5">手順４：ブラウザからアクセスしてみる</a>
+</li>
+<li>
+<a href="#6">手順５：管理室からゲームを動かす</a>
+</li></ul>
+<hr noshade size=1>
+<h2><small><a href="#TOP">△</a></small><a name="1" id="1">守らなければならないこと（規約）</a></h2>
+商人物語のプログラム(jcode.plを除く)は <a href="gpl.text">ＧＰＬ</a> という利用規約に基づいています。<br>
+この規約を読むのは大変ですが，設置するだけなら「<SPAN>著作権表示を外したり目立たなくしたりしてはならない</SPAN>」ことさえ守ればＯＫです。<br>
+著作権表示は，スタッフロールに記述されていますが，記述やリンクを削除したり目立たなくしてはいけません。<br>
+<br>
+そのほか，製作者や著作権者の利益を害するとか，サーバーに損害を与えるといった行為は，法に触れますので厳禁です。<br>
+要するに常識的に設置運用していれば何の問題もないです。
+<TABLE><TR><TD class="b">
+ただし，商人物語を<SPAN>改造</SPAN>したり，改造品などを<SPAN>配布</SPAN>したりする場合には，<br>
+重要な決まりがあります。それらについては，それぞれの項目で扱います。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="2" id="2">手順１：drago/_config.cgiを編集する</a></h2>
+ダウンロードしたファイルのうち，drago フォルダ内にある <b>_config.cgi</b> を<SPAN>テキストエディタ</SPAN>で開きます。<br>
+このファイルでいろいろな項目を設定できますが，まずは以下の例に挙がっている部分だけを設定してください。
+<TABLE><TR><TD class="b">
+いろいろ設定を変えてみたいという気持ちはよーく分かりますが，<SPAN>まずは確実に設置することを優先</SPAN>し，<br>
+ちゃんと動くことを確認するまでは，最小限の設定にとどめるのが得策なのです。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG><pre>
+#-----------------------
+# ◆はじめにする設定
+#-----------------------
+$MASTER_PASSWORD	='<SPAN>password</SPAN>';		# 管理パスワード
+$ADMIN_EMAIL		='<SPAN>mail@server.ne.jp</SPAN>';	# 管理者メールアドレス
+
+$HTML_TITLE	='<SPAN>はじまりの港町</SPAN>';		# 街の正式名称
+
+$TOWN_TITLE	='<SPAN>港町</SPAN>';			# 街の名称（全角２文字くらいで短く）
+</pre>
+<br>
+</TR></TABLE>
+※上のように，設定内容の部分の前後が「<b>'</b>」でくくられていなければなりません。出すには（Shift ＋ や）です。<br>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="3" id="3">手順２：perlへのパスを設定する</a></h2>
+まず，drago フォルダ内にある <b>index.cgi</b> をテキストエディタで開きます。<br>
+最初の行が「<BIG>#! /usr/local/bin/perl</BIG>」になっており，これを<SPAN>perlへのパス</SPAN>といいますが，<br>
+サーバーによっては，ここを別な言葉に書き換えなければならない場合があります。<br>
+<br>
+CsideNetや@nifty，iswebは，書き換える必要がないので次の手順へ進んでください。<br>
+AAA!CafeやCOOL ONLINEでは「<BIG>#! /usr/bin/perl</BIG>」，WAKWAKでは「<BIG>#! /bin/perl</BIG>」です。<br>
+ほかのサーバーは分かりませんので，そのサーバーの解説ページ（必ずあります）で探してみてください。
+<TABLE><TR><TD class="b">
+サーバーの解説ページでは「/usr/local/bin/perl」のように「#!」が書いてないところもありますが，<br>
+その場合でも「#! /usr/local/bin/perl」などと記述しなければいけませんのでご注意ください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+index.cgiを書き換えたら，同様に，<b>action.cgi</b>，<b>admin.cgi</b>も書き換えてください。合計３つのファイルを書き換えることになります。
+<TABLE><TR><TD class="b">
+<BIG>＜まとめ＞</BIG><br>
+<b>action.cgi</b>，<b>admin.cgi</b>，<b>index.cgi</b>の３つのファイルを開き，<br>
+先頭行のperlへのパスを書き換える。
+<br>
+</TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="4" id="4">手順３：サーバーにアップロードしてパーミッションを設定する</a></h2>
+<SPAN>ＦＴＰソフト</SPAN>を使って，ファイルをサーバーにアップロードします。<br>
+ＦＴＰソフトにもよりますが，それぞれのフォルダ（drago，common，program）をまとめてアップすればよいと思います。<br>
+なお，「マニュアル」のフォルダとその中身は，アップロードしなくて構いません。<br>
+<br>
+アップロードしたら，次のように<SPAN>パーミッション</SPAN>を設定します。<br>
+設定の仕方は，それぞれのＦＴＰソフトのヘルプなどを参考にしてください。
+<TABLE><TR><TD class="b">
+<BIG>＜設定例＞</BIG><pre>
+ +-- drago  [755]
+ |      ├------ custom     [755]
+ |      ├------ data       [<SPAN>777</SPAN>]
+ |      ├------ image      [755]
+ |      ├------ action.cgi [755]
+ |      ├------ admin.cgi  [755]
+ |      ├------ index.cgi  [755]
+ |      └------ それ以外   [設定の必要なし]
+ |
+ +-- common   [<SPAN>777</SPAN>]
+ |
+ +-- program  [755]
+        ├------ plug       [755]
+        ├------ town       [755]
+        └------ それ以外   [設定の必要なし]
+</pre>
+<br>
+</TR></TABLE>
+※「<SPAN>777</SPAN>」となるところが<SPAN>２つある</SPAN>ことに注意してください。<br>
+※「設定の必要なし」のところをあえて設定したいときは，「644」とします。<br>
+<TABLE><TR><TD class="b">
+サーバーによっては，ここで「755」となっているところを「705」，「701」等と指定させるところもあります。<br>
+詳しくは，サーバーの解説ページを参照してください。分からなければ，上記のとおり設定しても動くでしょう。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="5" id="5">手順４：ブラウザからアクセスしてみる</a></h2>
+サーバーへのアップロードが終わったら，さっそくブラウザからゲームにアクセスしてみましょう。<br>
+<b>http://あなたのホームページアドレス/</b><BIG>drago</BIG><b>/index.cgi</b> がゲームのアドレスです。<br>
+<br>
+アクセスすると「<SPAN>メンテナンス中</SPAN>」という旨の表示が出てきましたか？<br>
+これが出てこなくて，エラーになっている場合は，ここまでの作業にミスがあります。１つずつ確認してください。<br>
+<br>
+<TABLE><TR><TD class="b">
+ここで，ＦＴＰソフトで <BIG>drago</BIG> というフォルダ名を変えると，ゲームのアドレスを変えられます。<br>
+たとえば，drago のフォルダ名を game というフォルダ名に変えたとすると，<br>
+ゲームアドレスは http://あなたのホームページアドレス/<b>game</b>/index.cgi となります。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaoslime2.png"></TR></TABLE>
+<br>
+<h2><small><a href="#TOP">△</a></small><a name="6" id="6">手順５：管理室からゲームを動かす</a></h2>
+現在の状態では，あなたのゲームは「メンテナンス中」であり，眠った状態です。<br>
+ゲームを動かすには，管理室 <b>http://あなたのホームページアドレス/</b><BIG>drago</BIG><b>/</b><SPAN>admin.cgi</SPAN> にアクセスします。<br>
+（drago のフォルダ名を変えている場合は，ここのアドレスも当然変わります。）<br>
+<br>
+そこで，(1)まずパスワードを入力して入室し，画面下のほうにある「<SPAN>初期化</SPAN>」を行います。<br><br>
+(2)次に画面上のほうにある「<SPAN>商品データ生成</SPAN>」を行います。<br>
+これで，あなたのゲームは稼動する準備ができました。<br>
+<br>
+(3)そうしたら，管理室で「<SPAN>メンテモードを解除</SPAN>」をします。
+<TABLE><TR><TD class="b">
+ただし，初回のメンテモード解除の場合は，おそらく<SPAN>うまく解除できない</SPAN>可能性があります。<br>
+そのときは，<SPAN>ＦＴＰソフト</SPAN>で drago → data フォルダと進み， <b>lock</b> というフォルダを削除してください。
+<TD><IMG ALT="お手伝い" WIDTH="48" HEIGHT="48" BORDER="0" SRC="kaolib.png"></TR></TABLE>
+これでゲームが動き始めます。<br>
+<br>
+<hr noshade size=1>
+<a href="index.html">[トップ]</a> > 設置編 > <SPAN>新しく設置する方法</SPAN>
+<hr noshade size=1>
+<br>
+</body>
+</html>

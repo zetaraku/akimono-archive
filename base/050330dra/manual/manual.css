@@ -1,0 +1,10 @@
+BODY,TR,TD,TH {font: 10.5pt/130% MS UI Gothic;}
+BIG {font: bold 10.5pt MS UI Gothic;color:#996644;}
+SPAN {font: bold 10.5pt MS UI Gothic;color:#6644bb;}
+hr {color:#666666;}
+A {font-weight: bold; text-decoration:none}
+A:hover {text-decoration:underline; position:relative;top:1pt;}
+H2 {font: bold 12pt "MS UI Gothic";color:#659d40;background-color: #F0FFFA;
+ width=100%;border-left: 10px solid #AACCB0;
+ border-bottom: 2px solid #AACCB0;padding-left: 10px;}
+.b { border: 1px inset #45AA54;background-color: #F0FFFA;padding: 1px 10px;}
